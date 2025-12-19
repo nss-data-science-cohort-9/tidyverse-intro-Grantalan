@@ -1,0 +1,32 @@
+---
+title: "Tidyverse Introduction Excersice"
+output: html_notebook
+---
+
+```{r}
+
+library(tidyverse)
+
+```
+
+```{r}
+gdp_df <- read_csv("../data/gdp_per_capita.csv")
+gdp_df |> 
+  head(10)
+gdp_df |> 
+  tail(10)
+```
+```{r}
+gdp_df = gdp_df |> 
+  select(-`Value Footnotes`) |> 
+  rename(
+    Country = 'Country or Area',
+    GDP_Per_Capita = Value
+    ) 
+```
+
+```{r}
+
+```
+
+

@@ -4,9 +4,7 @@ output: html_notebook
 ---
 
 ```{r}
-
 library(tidyverse)
-
 ```
 
 ```{r}
@@ -17,6 +15,7 @@ gdp_df |>
   tail(10)
 ```
 ```{r}
+# Delete 'Value_Footnotes' column and rename columns
 gdp_df = gdp_df |> 
   select(-`Value Footnotes`) |> 
   rename(
@@ -26,7 +25,21 @@ gdp_df = gdp_df |>
 ```
 
 ```{r}
+# Create table with distribution of year counts
+year_frequency_table <- table(gdp_df$Year)
+frequency_table
 
+# Find number of unique years 
+length(frequency_table)
 ```
 
+```{r}
+# Plot distribution of years
+ggplot(gdp_df, aes(x = Year)) +
+  geom_bar()
+```
+
+```{r}
+
+```
 
